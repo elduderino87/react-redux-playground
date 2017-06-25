@@ -1,20 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, IndexLink } from 'react-router'
+import './NavigationMenu.scss'
 
-export const NavigationMenu = ({ loading, newItemsCount }) => {
+export const NavigationMenu = ({ newItemsCount }) => {
   return (
     <nav>
-      <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Home (<i>{newItemsCount}</i>) New</IndexLink>
-      {' | '}
-      <Link to='/about' activeClassName='page-layout__nav-item--active'>Aboutts</Link>
-      {loading && <span>Loading...</span>}
+      <ul className='nav-list'>
+        <li className='nav-list__item'>
+          <IndexLink to='/' activeClassName='nav-list__item--active'>
+          Home (<i>{newItemsCount}</i>) New</IndexLink>
+        </li>
+        <li className='nav-list__item'>
+          <Link to='/about' activeClassName='nav-list__item--active'>About</Link>
+        </li>
+        <li className='nav-list__item'>
+          <Link to='/students' activeClassName='nav-list__item--active'>Students</Link>
+        </li>
+      </ul>
     </nav>
   )
 }
 
 NavigationMenu.propTypes = {
-  loading: PropTypes.bool.isRequired,
   newItemsCount: PropTypes.number.isRequired
 }
 
