@@ -22,11 +22,12 @@ class StudentsView extends React.Component {
     return (
       <div>
         <h1>Students</h1>
+        <StudentList students={students} />
+        <hr />
         <input type='submit'
           value='Add Student'
           className='btn btn-primary'
           onClick={this.redirectToAddCoursePage} />
-        <StudentList students={students} />
       </div>
     )
   }
