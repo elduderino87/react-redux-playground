@@ -5,7 +5,7 @@ import './NavigationMenu.scss'
 
 export const NavigationMenu = ({ newItemsCount }) => {
   return (
-    <nav>
+    <nav className='l-nav'>
       <ul className='nav-list'>
         <li className='nav-list__item'>
           <IndexLink to='/' activeClassName='nav-list__item--active'>

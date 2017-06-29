@@ -18,7 +18,7 @@ describe('(Layout) PageLayout', () => {
         <Child />
       </PageLayout>
     )
-      .find('.page-layout__viewport')
+      .find('.l-main')
       .should.contain(<Child />)
   })
 })
