@@ -8,10 +8,10 @@
 @import 'layout/nav';
 @import 'layout/main';
 @import 'layout/footer';
+@import 'layout/row';
 
 //Module Rules
 @import 'modules/box';
-@import 'modules/row';
 
 //Vendors
 @import '~react-block-ui/style.css';
