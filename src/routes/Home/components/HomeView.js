@@ -27,7 +27,7 @@ class HomeView extends React.Component {
     return (
       <div className='homepage'>
         <h4>Dashboard</h4>
-        <section className='l-flex'>
+        <section className='box'>
           <article className='homepage__widget'>
             <Todo todos={this.props.todos} />
           </article>

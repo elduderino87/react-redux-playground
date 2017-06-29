@@ -1,22 +1,17 @@
-@import '~react-block-ui/style.css';
+//SASS-SMACSS
+@import "site-settings";
 @import 'base';
-@import 'layouts';
 
-// Some best-practice CSS that's useful for most apps
-// Just remove them if they're not what you want
-html {
-  box-sizing: border-box;
-}
+//Layout Rules
+@import 'layout/constrained';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/main';
+@import 'layout/footer';
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
+//Module Rules
+@import 'modules/box';
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+//Vendors
+@import '~react-block-ui/style.css';
+

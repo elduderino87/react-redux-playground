@@ -1,16 +1,20 @@
-/*
-Application Settings Go Here
-------------------------------------
-This file acts as a bundler for all variables/mixins/themes, so they
-can easily be swapped out without `core.scss` ever having to know.
+html {
+  box-sizing: border-box;
+}
 
-For example:
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family:  $font-main;
+}
 
-@import './variables/colors';
-@import './variables/components';
-@import './themes/default';
-*/
-
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 
 ul{
