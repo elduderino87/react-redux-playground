@@ -26,7 +26,7 @@ class StudentsView extends React.Component {
         <hr />
         <input type='submit'
           value='Add Student'
-          className='btn btn-primary'
+          className='btn primary'
           onClick={this.redirectToAddCoursePage} />
       </div>
     )

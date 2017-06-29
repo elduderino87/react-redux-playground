@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './TodoView.scss'
 
 export const TodoView = ({ todos }) => (
-  <div>
+  <div className='todo'>
     <h4>Todo View!</h4>
     <ul>
       {todos.map(todo =>

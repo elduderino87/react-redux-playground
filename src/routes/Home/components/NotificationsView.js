@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './NotificationsView.scss'
 
 export const NotificationsView = ({ notifications, onAdd }) => (
-  <div>
+  <div className='notification'>
     <h4>Notifications View!</h4>
     <ul>
       { notifications.map(notif =>
@@ -17,7 +17,7 @@ export const NotificationsView = ({ notifications, onAdd }) => (
     <input
       type='submit'
       value={'Add Notification'}
-      className='btn btn-primary'
+      className='btn primary add-notification'
       onClick={onAdd} />
   </div>
 )
