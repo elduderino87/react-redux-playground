@@ -1,12 +1,23 @@
+@import '../../../src/styles/_site-settings.scss';
 .nav-list {
   display: flex;
 }
 
-.nav-list__item{
+.nav-list__item {
   flex: 1 1 0;
-}
+  background-color: $dark-blue;
+  a {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
 
-.nav-list__item--active {
-  font-weight: bold;
-  text-decoration: underline;
+  &:hover{
+    opacity: 0.5;
+  }
+  .nav-list__item--active {
+    font-weight: bold;
+    background-color: #000;
+  }
 }

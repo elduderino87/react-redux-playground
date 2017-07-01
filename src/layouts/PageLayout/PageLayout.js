@@ -8,8 +8,7 @@ class PageLayout extends React.Component {
   render () {
     return (
       <BlockUi blocking={this.props.loading}>
-        <header className='l-header l-row'>
-          <h1>React Redux Starter Kit</h1>
+        <header className='l-header'>
           <NavigationMenu loading={this.props.loading} newItemsCount={this.props.newItemsCount} />
         </header>
 
