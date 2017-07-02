@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as studentActions from '../../../actions/studentActions'
 import StudentList from './StudentList'
-import { browserHistory } from 'react-router'
 
 class StudentsView extends React.Component {
   constructor (props, context) {
@@ -13,7 +12,7 @@ class StudentsView extends React.Component {
   }
 
   redirectToAddStudentPage () {
-    browserHistory.push('/student')
+    alert(`todo: redirect to add student form`)
   }
 
   render () {

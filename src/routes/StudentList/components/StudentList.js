@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import StudentListItem from './StudentListItem'
 
-const StudentList = ({ students = [] }) => {
+const StudentList = ({ students }) => {
   return (
     <ul>
       {students.map(student =>
