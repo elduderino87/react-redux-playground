@@ -1,7 +1,9 @@
-Learn React & Redux. Thanks to Cory House's [excellent pluralsight course].
+Learning React & Redux. Thanks to Cory House's [excellent pluralsight course].
 
 Project structure based on [davezuko/react-redux-starter-kit]
 
+`npm install`
+`npm start`
 
 
    [davezuko/react-redux-starter-kit]: <https://github.com/davezuko/react-redux-starter-kit>
