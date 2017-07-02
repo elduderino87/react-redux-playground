@@ -30,7 +30,7 @@ function mapStateToProps (state, ownProps) {
   return {
     loading: state.ajaxCallsInProgress > 0,
     newItemsCount: state.notifications.filter(x => x.isNew).length +
-      state.todos.filter(x => x.isNew).length
+      state.todoItems.filter(x => x.isNew).length
   }
 }
 

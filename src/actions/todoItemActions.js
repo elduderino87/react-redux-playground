@@ -1,9 +1,9 @@
-import * as types from './actionTypes'
+import * as actions from './actionTypes'
 import todosApi from '../api/mockTodosApi'
 import { beginAjaxCall } from './ajaxStatusActions'
 
-export function loadTodosSuccess (todos) {
-  return { type: types.LOAD_TODOS_SUCCESS, todos }
+export function loadTodosSuccess (todoItems) {
+  return { type: actions.LOAD_TODOS_SUCCESS, todoItems }
 }
 
 export function loadTodos () {

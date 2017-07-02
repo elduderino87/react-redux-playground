@@ -1,5 +1,9 @@
 export default {
-  todos: [],
+  todoItems: [],
+  addTodoModal: {
+    isShowing: false,
+    message: ''
+  },
   students: [],
   notifications: [],
   ajaxCallsInProgress: 0,

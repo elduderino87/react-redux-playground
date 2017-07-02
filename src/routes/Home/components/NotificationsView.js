@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './NotificationsView.scss'
 
-export const NotificationsView = ({ notifications, onAdd }) => (
+export const NotificationsView = ({ notifications, addNotification }) => (
   <div className='notification'>
     <h4>Notifications View!</h4>
     <ul>
@@ -18,12 +18,12 @@ export const NotificationsView = ({ notifications, onAdd }) => (
       type='submit'
       value={'Add Notification'}
       className='btn primary add-notification'
-      onClick={onAdd} />
+      onClick={addNotification} />
   </div>
 )
 NotificationsView.propTypes = {
   notifications: PropTypes.array.isRequired,
-  onAdd: PropTypes.func.isRequired,
+  addNotification: PropTypes.func.isRequired,
 }
 
 export default NotificationsView

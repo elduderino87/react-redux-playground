@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import configureStore from './store/configureStore'
 import './styles/main.scss'
-import { loadTodos } from './actions/todoActions'
+import { loadTodos } from './actions/todoItemActions'
 import { loadNotifications } from './actions/notificationActions'
 
 const store = configureStore()
