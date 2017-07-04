@@ -1,5 +1,13 @@
+@import '../../../styles/_site-settings.scss';
+
 .todo{
-    .add-todo{
+    .todo__list{}
+    .todo__list-item{
         margin-top: 1em;
+    }
+    .todo__add-todo{
+        text-decoration: underline;
+        cursor: pointer;
+        color: $light-blue;
     }
 }

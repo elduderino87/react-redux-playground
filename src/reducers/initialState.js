@@ -1,8 +1,8 @@
 export default {
   todoItems: [],
-  addTodoModal: {
+  editTodoModal: {
     isShowing: false,
-    message: ''
+    todoItem: {}
   },
   students: [],
   notifications: [],

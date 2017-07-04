@@ -1,8 +1,9 @@
 import * as actions from './actionTypes'
 
-export function openModal () {
+export function openModal (todoItem) {
   return {
-    type: actions.SHOW_ADD_TODO_MODAL
+    type: actions.SHOW_ADD_TODO_MODAL,
+    todoItem
   }
 }
 

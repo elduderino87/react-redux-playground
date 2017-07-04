@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import todoItems from './todoReducer'
-import addTodoModal from './addTodoModalReducer'
+import editTodoModal from './editTodoModalReducer'
 import notifications from './notificationReducer'
 import students from './studentReducer'
 import ajaxCallsInProgress from './ajaxStatusReducer'
@@ -8,7 +8,7 @@ import ajaxCallsInProgress from './ajaxStatusReducer'
 // named on the state object
 const rootReducer = combineReducers({
   todoItems,
-  addTodoModal,
+  editTodoModal,
   notifications,
   students,
   ajaxCallsInProgress
