@@ -1,5 +1,6 @@
 export default {
   todoItems: [],
+  todoTypes: [],
   editTodoModal: {
     isShowing: false,
     todoItem: {}

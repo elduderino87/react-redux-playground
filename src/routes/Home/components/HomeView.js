@@ -6,7 +6,7 @@ import Todo from './TodoView'
 import EditTodoView from './EditTodoView'
 import Notifications from './NotificationsView'
 import { addNotification } from '../../../actions/notificationActions'
-import { openModal, hideModal } from '../../../actions/todoModalActions'
+import { openModal } from '../../../actions/todoModalActions'
 
 class HomeView extends React.Component {
   constructor (props, context) {

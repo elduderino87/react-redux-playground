@@ -8,6 +8,7 @@ const SelectInput = ({ name, label, onChange, defaultOption, value, error, optio
       <div className='form-field'>
         <select
           name={name}
+          id={name}
           value={value}
           onChange={onChange}
           className='form-control'>
@@ -28,7 +29,10 @@ SelectInput.propTypes = {
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   defaultOption: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   error: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.object)
 }

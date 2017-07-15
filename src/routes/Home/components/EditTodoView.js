@@ -97,7 +97,7 @@ export class EditTodoView extends React.Component {
             <TodoForm todo={this.state.todo}
               onSave={this.saveTodo} onChange={this.updateTodoState}
               errors={this.state.errors} onCancel={this.cancelEdit}
-              saving={this.state.saving} />
+              saving={this.state.saving} todoTypes={this.props.todoTypes} />
           </article>
         </section>
       </Modal>
@@ -105,15 +105,26 @@ export class EditTodoView extends React.Component {
   }
 }
 
+function todoTypesFormattedForDropdown (todoTypes = []) {
+  return todoTypes.map(type => {
+    return {
+      value: type.id.toString(),
+      text: type.name
+    }
+  })
+}
+
 EditTodoView.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   todo: PropTypes.object.isRequired,
+  todoTypes: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 }
 
 function mapStateToProps (state, ownProps) {
   return {
-    todo: state.editTodoModal.todoItem
+    todo: state.editTodoModal.todoItem,
+    todoTypes: todoTypesFormattedForDropdown(state.todoTypes)
   }
 }
 

@@ -20,7 +20,7 @@ class TodoView extends React.Component {
             <li key={todo.id} className='todo__list-item'>
               <span className='todo__add-todo'
                 onClick={() => this.setSelectedTodo(todo)}>
-                {todo.title} {todo.isNew ? <i>New</i> : ''}
+                {todo.title} {todo.isNew ? <i>(New)</i> : ''}
               </span>
             </li>
           )}
