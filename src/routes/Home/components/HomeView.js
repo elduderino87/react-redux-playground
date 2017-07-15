@@ -42,7 +42,7 @@ class HomeView extends React.Component {
           </article>
         </section>
         <EditTodoView isOpen={this.props.showEditTodoModal} closeModal={this.props.actions.closeEditTodoModal}
-          todoItem={this.props.currentEditTodo} />
+          todo={this.props.currentEditTodo} />
       </div>
     )
   }

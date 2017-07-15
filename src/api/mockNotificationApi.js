@@ -1,5 +1,5 @@
-import delay from './delay';
-import * as _ from 'lodash';
+import delay from './delay'
+import * as _ from 'lodash'
 
 const notifications = [
   {

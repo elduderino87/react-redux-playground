@@ -38,4 +38,34 @@
       border-color: #122b40;
     }
   }
+  &.primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    &:hover {
+      color: #fff;
+      background-color: #204d74;
+      border-color: #122b40;
+    }
+  }
+  &.warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    &:hover {
+      color: #fff;
+      background-color: #ec971f;
+      border-color: #d58512;
+    }
+  }
+  &.danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    &.hover {
+      color: #fff;
+      background-color: #ac2925;
+      border-color: #761c19;
+    }
+  }
 }
