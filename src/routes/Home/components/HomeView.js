@@ -42,7 +42,7 @@ class HomeView extends React.Component {
           </article>
         </section>
         <EditTodoView isOpen={this.props.showEditTodoModal} closeModal={this.props.actions.closeEditTodoModal}
-          todo={this.props.currentEditTodo} />
+           />
       </div>
     )
   }
@@ -52,16 +52,14 @@ HomeView.propTypes = {
   actions: PropTypes.object.isRequired,
   notifications: PropTypes.array.isRequired,
   todos: PropTypes.array.isRequired,
-  showEditTodoModal: PropTypes.bool.isRequired,
-  currentEditTodo: PropTypes.object.isRequired
+  showEditTodoModal: PropTypes.bool.isRequired
 }
 
 function mapStateToProps (state, ownProps) {
   return {
     notifications: state.notifications,
     todos: state.todoItems,
-    showEditTodoModal: state.editTodoModal.isShowing,
-    currentEditTodo: state.editTodoModal.todoItem
+    showEditTodoModal: state.editTodoModal.isShowing
   }
 }
 function mapDispatchToProps (dispatch) {

@@ -96,7 +96,7 @@ EditTodoView.propTypes = {
 
 function mapStateToProps (state, ownProps) {
   return {
-    todo: ownProps.todo
+    todo: state.editTodoModal.todoItem
   }
 }
 
