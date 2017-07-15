@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import configureStore from './store/configureStore'
 import './styles/main.scss'
+import '../node_modules/toastr/build/toastr.min.css'
 import { loadTodos } from './actions/todoItemActions'
 import { loadNotifications } from './actions/notificationActions'
 

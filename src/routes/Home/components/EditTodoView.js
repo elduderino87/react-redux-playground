@@ -9,7 +9,6 @@ import { updateTodo } from '../../../actions/todoItemActions'
 export class EditTodoView extends React.Component {
   constructor (props, context) {
     super(props, context)
-    debugger
     this.state = {
       todo: Object.assign({}, props.todo),
       errors: {},
@@ -35,9 +34,23 @@ export class EditTodoView extends React.Component {
     return this.setState({ todo: todo })
   }
 
+  todoFormIsValid = () => {
+    let formIsValid = true
+    let errors = {}
+
+    if (this.state.todo.title.length < 5) {
+      errors.title = 'Title must be at least 5 characters.'
+      formIsValid = false
+    }
+
+    this.setState({ errors: errors })
+    return formIsValid
+  }
+
   backToDashboard () {
     this.setState({ saving: false })
     toastr.success('Todo saved')
+    this.props.closeModal()
   }
 
   saveTodo (event) {
@@ -81,18 +94,18 @@ EditTodoView.propTypes = {
   actions: PropTypes.object.isRequired
 }
 
-function mapDispatchToProps (dispatch) {
-  return {
-    actions:{
-      saveTodo: (todo) => dispatch(updateTodo(todo)),
-    }
-  }
-}
-
 function mapStateToProps (state, ownProps) {
   return {
     todo: ownProps.todo
   }
 }
 
-export default connect(mapDispatchToProps, mapStateToProps)(EditTodoView)
+function mapDispatchToProps (dispatch) {
+  return {
+    actions:{
+      saveTodo: (todo) => dispatch(updateTodo(todo))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditTodoView)

@@ -20,7 +20,7 @@ export function loadTodos () {
 export function updateTodo (todo) {
   return function (dispatch, getState) {
     dispatch(beginAjaxCall())
-    return todosApi.saveTodo(todo).todo(course => {
+    return todosApi.saveTodo(todo).then(course => {
       dispatch(updateTodoSuccess(todo))
     }).catch(error => {
       throw (error)
