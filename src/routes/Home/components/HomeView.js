@@ -41,7 +41,7 @@ class HomeView extends React.Component {
             <Notifications notifications={this.props.notifications} addNotification={this.addNotification} />
           </article>
         </section>
-        <EditTodoView isOpen={this.props.showEditTodoModal} closeModal={this.props.actions.closeEditTodoModal}
+        <EditTodoView isOpen={this.props.showEditTodoModal}
            />
       </div>
     )
@@ -66,8 +66,7 @@ function mapDispatchToProps (dispatch) {
   return {
     actions:{
       addNotification: (notification) => dispatch(addNotification(notification)),
-      editTodo: (todo) => dispatch(openModal(todo)),
-      closeEditTodoModal: () => dispatch(hideModal())
+      editTodo: (todo) => dispatch(openModal(todo))      
     }
   }
 }

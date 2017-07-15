@@ -5,12 +5,13 @@ import TodoForm from './TodoForm'
 import toastr from 'toastr'
 import { connect } from 'react-redux'
 import { updateTodo } from '../../../actions/todoItemActions'
+import { hideModal } from '../../../actions/todoModalActions'
 import './EditTodoView.scss'
 
 export class EditTodoView extends React.Component {
   constructor (props, context) {
     super(props, context)
-    
+
     this.state = {
       todo: Object.assign({}, props.todo),
       errors: {},
@@ -54,7 +55,7 @@ export class EditTodoView extends React.Component {
   handleTodoSubmit (saved) {
     this.setState({ saving: false })
     toastr.success(saved ? 'Todo saved' : 'Edit canceled')
-    this.props.closeModal()
+    this.props.actions.closeModal()
   }
 
   cancelEdit (event) {
@@ -83,13 +84,13 @@ export class EditTodoView extends React.Component {
     return (
       <Modal
         isOpen={this.props.isOpen}
-        onRequestClose={this.props.closeModal}
+        onRequestClose={this.props.actions.closeModal}
         contentLabel='Add/Edit Todo'>
         <section className='edit-todo-modal'>
           <div className='edit-todo-modal__heading'>
             <h2>{ this.props.todo.title }</h2>
             <button className='btn xs danger edit-todo-modal__close'
-              onClick={this.props.closeModal}>close</button>
+              onClick={this.props.actions.closeModal}>close</button>
           </div>
           <article className='edit-todo-modal__body'>
             <p>ID: { this.props.todo.id }</p>
@@ -106,7 +107,6 @@ export class EditTodoView extends React.Component {
 
 EditTodoView.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  closeModal: PropTypes.func.isRequired,
   todo: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 }
@@ -120,7 +120,8 @@ function mapStateToProps (state, ownProps) {
 function mapDispatchToProps (dispatch) {
   return {
     actions:{
-      saveTodo: (todo) => dispatch(updateTodo(todo))
+      saveTodo: (todo) => dispatch(updateTodo(todo)),
+      closeModal: () => dispatch(hideModal())
     }
   }
 }
