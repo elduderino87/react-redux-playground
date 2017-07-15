@@ -18,6 +18,14 @@
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+
+  &.xs{
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+
   &.default {
     color: #333;
     background-color: #e6e6e6;

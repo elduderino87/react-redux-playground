@@ -5,10 +5,12 @@ import TodoForm from './TodoForm'
 import toastr from 'toastr'
 import { connect } from 'react-redux'
 import { updateTodo } from '../../../actions/todoItemActions'
+import './EditTodoView.scss'
 
 export class EditTodoView extends React.Component {
   constructor (props, context) {
     super(props, context)
+    
     this.state = {
       todo: Object.assign({}, props.todo),
       errors: {},
@@ -17,12 +19,14 @@ export class EditTodoView extends React.Component {
     }
 
     this.updateTodoState = this.updateTodoState.bind(this)
+    this.cancelEdit = this.cancelEdit.bind(this)
     this.saveTodo = this.saveTodo.bind(this)
   }
 
   componentWillReceiveProps (nextProps) {
     if (this.props.todo.id !== nextProps.todo.id) {
       // Necessary to populate form when existing course is loaded directly.
+      this.originalTodo = Object.assign({}, nextProps.todo)
       this.setState({ todo: Object.assign({}, nextProps.todo) })
     }
   }
@@ -47,10 +51,16 @@ export class EditTodoView extends React.Component {
     return formIsValid
   }
 
-  backToDashboard () {
+  handleTodoSubmit (saved) {
     this.setState({ saving: false })
-    toastr.success('Todo saved')
+    toastr.success(saved ? 'Todo saved' : 'Edit canceled')
     this.props.closeModal()
+  }
+
+  cancelEdit (event) {
+    event.preventDefault()
+    this.setState({ todo: this.originalTodo })
+    this.handleTodoSubmit(false)
   }
 
   saveTodo (event) {
@@ -62,7 +72,7 @@ export class EditTodoView extends React.Component {
     this.setState({ saving: true })
 
     this.props.actions.saveTodo(this.state.todo)
-      .then(() => this.backToDashboard())
+      .then(() => this.handleTodoSubmit(true))
       .catch(error => {
         toastr.error(error)
         this.setState({ saving: false })
@@ -75,13 +85,20 @@ export class EditTodoView extends React.Component {
         isOpen={this.props.isOpen}
         onRequestClose={this.props.closeModal}
         contentLabel='Add/Edit Todo'>
-        <h2>{ this.props.todo.title }</h2>
-        <p>ID: { this.props.todo.id }</p>
-        <button className='btn danger' onClick={this.props.closeModal}>close</button>
-        <TodoForm todo={this.state.todo}
-          onSave={this.saveTodo} onChange={this.updateTodoState}
-          errors={this.state.errors}
-          saving={this.state.saving} />
+        <section className='edit-todo-modal'>
+          <div className='edit-todo-modal__heading'>
+            <h2>{ this.props.todo.title }</h2>
+            <button className='btn xs danger edit-todo-modal__close'
+              onClick={this.props.closeModal}>close</button>
+          </div>
+          <article className='edit-todo-modal__body'>
+            <p>ID: { this.props.todo.id }</p>
+            <TodoForm todo={this.state.todo}
+              onSave={this.saveTodo} onChange={this.updateTodoState}
+              errors={this.state.errors} onCancel={this.cancelEdit}
+              saving={this.state.saving} />
+          </article>
+        </section>
       </Modal>
     )
   }

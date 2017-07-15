@@ -10,10 +10,11 @@ const TextInput = ({ name, label, onChange, placeholder, value, error }) => {
   return (
     <div className={wrapperClass}>
       <label htmlFor={name}>{label}</label>
-      <div className='field'>
+      <div className='form-field'>
         <input
           type='text'
           name={name}
+          id={name}
           className='form-control'
           placeholder={placeholder}
           value={value}

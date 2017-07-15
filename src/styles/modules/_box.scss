@@ -1,9 +1,15 @@
 .box {
   display: flex;
+  &.vertical{
+    flex-direction: column;
+  }
   &.align-center {
     align-items: center;
   }
   &.justify-center {
     justify-content: center;
+  }
+  &.justify-far{
+    justify-content: space-between;
   }
 }

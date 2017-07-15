@@ -8,10 +8,11 @@ body {
   padding: 0;
   height: 100%;
   font-family: $base-font;
-  #root>div{
+  #root>div {
     height: 100%;
-    >div{
-        height: 100%;;
+    >div {
+      height: 100%;
+      ;
     }
   }
 }
@@ -22,9 +23,16 @@ body {
   box-sizing: inherit;
 }
 
-a{
+a {
   text-decoration: none;
   color: $light-blue;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
 }
 
 ul {
