@@ -19,6 +19,7 @@ class StudentDetailView extends React.Component {
     return (
       <div>
         <h1>Student Details</h1>
+        <label>Name: </label> {this.props.student.firstName }
         <hr />
         <input type='button'
           value='Back'
@@ -30,12 +31,23 @@ class StudentDetailView extends React.Component {
 }
 
 StudentDetailView.propTypes = {
-  students: PropTypes.array.isRequired
+  student: PropTypes.object.isRequired
+}
+
+function getStudentById (students, id) {
+  const student = students.filter(student => student.id === id)
+  if (student) return student[0]
+  return null
 }
 
 function mapStateToProps (state, ownProps) {
+  const studentId = +ownProps.params.id
+  let student = { id: '', firstName: '', lastName: '' }
+  if (studentId && state.students.length > 0) {
+    student = getStudentById(state.students, studentId)
+  }
   return {
-    students: state.students
+    student: student
   }
 }
 
