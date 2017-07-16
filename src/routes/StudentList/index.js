@@ -1,11 +1,8 @@
-import { loadStudents } from '../../actions/studentActions'
-
-export default (store) => ({
+export default () => ({
   path : 'students',
   getComponent (nextState, cb) {
     require.ensure([], (require) => {
       const students = require('./components/StudentsView').default
-      store.dispatch(loadStudents())
       cb(null, students)
     }, 'students')
   }

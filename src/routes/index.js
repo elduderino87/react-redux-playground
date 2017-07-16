@@ -14,7 +14,7 @@ export const createRoutes = (store) => ({
   indexRoute: Home,
   childRoutes: [
     AboutRoute(),
-    StudentListRoute(store),
+    StudentListRoute(),
     StudentDetailRoute()
   ]
 })

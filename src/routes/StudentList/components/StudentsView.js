@@ -15,6 +15,10 @@ class StudentsView extends React.Component {
     alert(`todo: redirect to add student form`)
   }
 
+  componentDidMount () {
+    this.props.actions.loadStudents()
+  }
+
   render () {
     const { students } = this.props
 
@@ -33,7 +37,8 @@ class StudentsView extends React.Component {
 }
 
 StudentsView.propTypes = {
-  students: PropTypes.array.isRequired
+  students: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired
 }
 
 function mapStateToProps (state, ownProps) {
