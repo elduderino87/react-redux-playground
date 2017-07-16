@@ -1,4 +1,6 @@
 import delay from './delay'
+import * as _ from 'lodash'
+
 const students = [{
   id: 1,
   firstName: 'Mohammad',
@@ -20,6 +22,15 @@ class StudentsApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(Object.assign([], students))
+      }, delay)
+    })
+  }
+
+  static getStudentById (id) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const student = _.find(students, (std) => std.id === +id)
+        resolve(Object.assign({}, student))
       }, delay)
     })
   }

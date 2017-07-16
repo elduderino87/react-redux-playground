@@ -11,7 +11,6 @@ class PageLayout extends React.Component {
         <header className='l-header'>
           <NavigationMenu loading={this.props.loading} newItemsCount={this.props.newItemsCount} />
         </header>
-
         <div className='l-main l-row'>
           {this.props.children}
         </div>

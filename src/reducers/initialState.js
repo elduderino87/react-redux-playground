@@ -6,6 +6,7 @@ export default {
     todoItem: {}
   },
   students: [],
+  studentDetail: {},
   notifications: [],
   ajaxCallsInProgress: 0,
   newItemsCount: 0

@@ -66,7 +66,7 @@ function mapDispatchToProps (dispatch) {
   return {
     actions:{
       addNotification: (notification) => dispatch(addNotification(notification)),
-      editTodo: (todo) => dispatch(openModal(todo))      
+      editTodo: (todo) => dispatch(openModal(todo))
     }
   }
 }

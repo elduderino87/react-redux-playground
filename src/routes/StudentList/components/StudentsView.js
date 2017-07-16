@@ -1,8 +1,6 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import * as studentActions from '../../../actions/studentActions'
 import StudentList from './StudentList'
 
 class StudentsView extends React.Component {
@@ -13,10 +11,6 @@ class StudentsView extends React.Component {
 
   redirectToAddStudentPage () {
     alert(`todo: redirect to add student form`)
-  }
-
-  componentDidMount () {
-    this.props.actions.loadStudents()
   }
 
   render () {
@@ -37,8 +31,7 @@ class StudentsView extends React.Component {
 }
 
 StudentsView.propTypes = {
-  students: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  students: PropTypes.array.isRequired
 }
 
 function mapStateToProps (state, ownProps) {
@@ -47,10 +40,4 @@ function mapStateToProps (state, ownProps) {
   }
 }
 
-function mapDispatchToProps (dispatch) {
-  return {
-    actions: bindActionCreators(studentActions, dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(StudentsView)
+export default connect(mapStateToProps)(StudentsView)
